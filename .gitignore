@@ -6,3 +6,4 @@ gold_bi/
 saida_lab0/
 minio-data/
 hotel_catalog.db
+hotel_catalog_minio.db
