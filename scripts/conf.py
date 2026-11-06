@@ -14,7 +14,7 @@ de ambiente MODO tambem e aceita, mas a sintaxe dela muda conforme o shell:
     PowerShell    $env:MODO = "minio"   (e depois o python, em outra linha)
     cmd.exe       set MODO=minio        (e depois o python, em outra linha)
 
-Prefira --modo: e uma coisa a menos para dar errado na maquina do aluno.
+Prefira --modo: e uma coisa a menos para dar errado.
 """
 import os
 import sys
