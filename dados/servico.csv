@@ -1,0 +1,13 @@
+codigo,descr_servico,valor,marca,id_tp_servico
+101,Restaurante - jantar,"128,00",Sabor & Cia,1
+102,Restaurante - almoco,"96,50",Sabor & Cia,1
+103,Cafe da manha extra,"48,00",Sabor & Cia,1
+104,Frigobar,"62,90",MiniBar Plus,1
+105,Room service,"87,00",Sabor & Cia,1
+201,Massagem relaxante,"240,00",Bem Viver,2
+202,Acesso ao spa,"150,00",Bem Viver,2
+203,Personal trainer,"180,00",Bem Viver,2
+301,Lavanderia,"74,50",LavaJa,3
+302,Estacionamento diaria,"55,00",ParkHotel,3
+303,Transfer aeroporto,"165,00",GoTransfer,3
+304,Late checkout,"120,00",ParkHotel,3

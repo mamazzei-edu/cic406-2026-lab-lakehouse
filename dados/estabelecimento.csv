@@ -1,0 +1,22 @@
+id_estabelecimento,nm_estabelecimento,cep,id_bairro,id_tp_estabelecimento
+1,Hotel Central Gracas,91660-484,38,1
+2,Grand Hotel Gracas,36185-924,38,2
+3,Hotel Central Petropolis,48088-777,34,1
+4,Hotel Central Portao,08312-741,29,1
+5,Grand Hotel Moema,70111-232,1,2
+6,Grand Hotel Pampulha,30350-645,21,2
+7,Grand Hotel Santo Agostinho,94775-316,23,2
+8,Hotel Central Agua Verde,67958-548,25,1
+9,Hotel Central Barra Da Tijuca,56323-265,15,1
+10,Grand Hotel Barra Da Tijuca,14786-885,15,2
+11,Hotel Central Boa Viagem,43152-049,35,1
+12,Grand Hotel Boa Viagem,88833-348,35,2
+13,Hotel Central Tatuape,64989-869,6,1
+14,Grand Hotel Tatuape,91120-653,6,2
+15,Hotel Central Buritis,21593-073,22,1
+16,Grand Hotel Buritis,43694-679,22,2
+17,Grand Hotel Copacabana,14705-044,11,2
+18,Hotel Central Flamengo,96634-628,16,1
+19,Grand Hotel Flamengo,47323-489,16,2
+20,Hotel Central Espinheiro,50616-640,36,1
+21,Hotel Central Lapa,23730-556,8,1
