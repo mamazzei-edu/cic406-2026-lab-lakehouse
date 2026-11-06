@@ -1,5 +1,6 @@
 .venv/
 __pycache__/
+*.pyc
 wh/
 gold_bi/
 saida_lab0/

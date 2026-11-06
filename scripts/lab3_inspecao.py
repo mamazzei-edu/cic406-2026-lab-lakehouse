@@ -24,11 +24,11 @@ fato = cat.load_table("gold.fato_servico")
 # Rodar duas vezes sobre o mesmo estado empilha commits e confunde os numeros.
 if any(f.name == "dia_data" for f in fato.spec().fields):
     raise SystemExit(
-        "Esta tabela já passou pelo laboratório 3 (a particao já é por dia).\n"
+        "Esta tabela ja passou pelo laboratorio 3 (a particao ja e por dia).\n"
         "Rode novamente o lab2_silver_gold.py para recriar a gold e depois este.")
 if len(fato.history()) > 1:
     raise SystemExit(
-        "Esta tabela já tem mais de um commit.\n"
+        "Esta tabela ja tem mais de um commit.\n"
         "Rode novamente o lab2_silver_gold.py para recriar a gold e depois este.")
 
 
@@ -45,7 +45,7 @@ def arquivos_no_disco(t):
 
 
 # ============================================ 1. o que o Iceberg gravou mesmo
-print("1. O QUE ESTÁ GRAVADO\n")
+print("1. O QUE ESTA GRAVADO\n")
 arq = fato.inspect.files().to_pandas()
 print(f"  arquivos de dados no snapshot corrente : {len(arq)}")
 print(f"  linhas somadas nos arquivos            : {N(int(arq['record_count'].sum()))}")
@@ -90,7 +90,7 @@ print("""
   A LICAO: ha mais arquivos no disco do que na tabela. O Parquet antigo de
   abril continua la -- e o que permite voltar no tempo. Quem apontar uma
   ferramenta de BI para a pasta data/ vai somar o mes de abril DUAS VEZES.
-  O que diz quais arquivos valem é o snapshot, não o sistema de arquivos.""")
+  O que diz quais arquivos valem e o snapshot, nao o sistema de arquivos.""")
 
 # ================================================== 4. snapshots e historico
 print("\n4. SNAPSHOTS E TIME TRAVEL\n")
@@ -102,26 +102,26 @@ primeiro = fato.history()[0].snapshot_id
 antigo = fato.scan(snapshot_id=primeiro).to_arrow()
 print(f"\n  tabela como estava no 1o commit : {N(len(antigo))} linhas")
 print(f"  tabela agora                    : {N(len(fato.scan().to_arrow()))} linhas")
-print("  Mesma contagem: o reprocessamento trocou os arquivos, não os dados.")
+print("  Mesma contagem: o reprocessamento trocou os arquivos, nao os dados.")
 
 # ================================================ 5. evolucao de particao
-print("\n5. PARTITION EVOLUTION - de mês para dia, sem reescrever nada\n")
+print("\n5. PARTITION EVOLUTION - de mes para dia, sem reescrever nada\n")
 print(f"  spec atual : {fato.spec()}")
 with fato.update_spec() as us:
     us.remove_field("mes_data")
     us.add_field("data", DayTransform(), "dia_data")
 fato = cat.load_table("gold.fato_servico")
 print(f"  spec nova  : {fato.spec()}")
-print(f"  arquivos apos a evolução : {arquivos_no_snapshot(fato)}  (nenhum foi reescrito)")
+print(f"  arquivos apos a evolucao : {arquivos_no_snapshot(fato)}  (nenhum foi reescrito)")
 print(f"  linhas                   : {N(len(fato.scan().to_arrow()))}")
 print("""
-  Mudar a partição foi uma alteração de METADADO. Os arquivos antigos seguem
-  particionados por mês; os próximos serão por dia; e a mesma consulta lê os
-  dois. Em um DW clássico isso seria um ALTER TABLE com reorganização física
+  Mudar a particao foi uma alteracao de METADADO. Os arquivos antigos seguem
+  particionados por mes; os proximos serao por dia; e a mesma consulta le os
+  dois. Em um DW classico isso seria um ALTER TABLE com reorganizacao fisica
   e janela de indisponibilidade.""")
 
 # ======================================================= 6. conferencia final
-print("\n6. CONFERÊNCIA FINAL DA CAMADA GOLD\n")
+print("\n6. CONFERENCIA FINAL DA CAMADA GOLD\n")
 esperado = {
     "gold.dim_geografia": 40, "gold.dim_estabelecimento": 21,
     "gold.dim_servico": 12, "gold.dim_tempo": 543,
